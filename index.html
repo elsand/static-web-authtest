@@ -1,1 +1,16 @@
 <h3>Hello world!</h3>
+
+<p>(see console)</p>
+
+<script>
+
+async function getUserInfo() {
+  const response = await fetch('/.auth/me');
+  const payload = await response.json();
+  const { clientPrincipal } = payload;
+  return clientPrincipal;
+}
+
+console.log(await getUserInfo());
+  
+</script>
